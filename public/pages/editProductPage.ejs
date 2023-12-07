@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("../includes/head") %>
+
+    <body>
+        <%- include ("../components/navbar.ejs") %>
+            <div class="container">
+                <h1>Edit Product</h1>
+
+                <!-- Edit Product Form -->
+                <form action="/product/update/<%= product.id %>" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" value="<%= product.name %>"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" class="form-control"
+                            required><%= product.description %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL:</label>
+                        <input type="text" id="imageUrl" name="imageUrl" class="form-control"
+                            value="<%= product.imageUrl %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" class="form-control" value="<%= product.price %>"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <%- include ("../includes/script") %>
+    </body>
+
+</html>

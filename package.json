@@ -1,0 +1,23 @@
+{
+  "name": "sesi-2-backend",
+  "version": "1.0.0",
+  "description": "Sesi 2 Backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Sesi",
+    "2",
+    "Backend"
+  ],
+  "author": "Eric Julianto",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "firebase": "^8.10.1",
+    "firebase-admin": "^11.11.1"
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("../includes/head") %>
+
+    <body>
+        <%- include ("../components/navbar.ejs") %>
+            <div class="container">
+                <h1>Product</h1>
+
+                <a href="/product/add" class="btn btn-primary">Add New Product</a>
+
+                <% if (products.length> 0) { %>
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% products.forEach((product)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= product.name %>
+                                    </td>
+                                    <td>
+                                        <%= product.description %>
+                                    </td>
+                                    <td>
+                                        <img src="<%= product.imageUrl %>" alt="<%= product.name %>" width="100">
+                                    </td>
+                                    <td>Rp<%= product.price %>
+                                    </td>
+                                    <td>
+                                        <a href="/product/edit/<%= product.id %>" class="btn btn-warning">Edit</a>
+                                        <form action="/product/delete/<%= product.id %>" method="POST"
+                                            style="display: inline;">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+
+
+                    </table>
+                    <% } else { %>
+                        <p>No products available.</p>
+                        <% } %>
+            </div>
+
+            <%- include ("../includes/script") %>
+    </body>
+
+</html>
